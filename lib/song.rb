@@ -10,7 +10,6 @@ class Song
     @name = name
     @artist = artist
     @genre = genre
-
     @@artists << artist
     @@genres << genre
     @@count += 1
@@ -21,15 +20,15 @@ class Song
   end
 
   def self.genres
-    @@genres.uniq  # returns a new array by removing duplicate values in self
+    @@genres.uniq
   end
 
   def self.artists
-    @@artists.uniq # https://ruby-doc.org/core-2.2.0/Array.html#method-i-uniq
+    @@artists.uniq
   end
 
   def self.genre_count
-    @@genres.each_with_object(Hash.new(0)) do |key, hash| #research for better understanding
+    @@genres.each_with_object(Hash.new(0)) do |key, hash| 
       hash[key] += 1
     end
   end
